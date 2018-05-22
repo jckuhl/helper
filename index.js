@@ -8,12 +8,8 @@ function find(keyword, option) {
     keyword = keyword.toLowerCase();
     let localDict = dict;
     let dictArray = [];
-    Object.values(localDict).forEach( (value)=> {
-        dictArray.push(value);
-    });
-    dictArray = flatten(dictArray).filter(entry=> {
-        return has(entry, keyword);
-    });
+    Object.values(localDict).forEach( (value)=> dictArray.push(value));
+    dictArray = flatten(dictArray).filter(entry=> has(entry, keyword));
     try {
         console.log(`\n\n*****  ${dictArray[0][keyword].name.trim()}  *****\n\n`);
         console.log("Use:", dictArray[0][keyword].use);
