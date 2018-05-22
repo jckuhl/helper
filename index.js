@@ -1,15 +1,26 @@
+#! /usr/bin/env node
 
-function find(keyword) {
-    fetch('keywords.json')
-        .then(data=> {
-            return data.json();
-        })
-        .then(data=> {
-            console.log(data);
-        })
-        .catch(error=> console.log(error));
+const dict = require('./dict.json');
+const flatten = require('lodash.flatten');
+const has = require('lodash.has');
+
+function find(keyword, option) {
+    let localDict = dict;
+    let dictArray = [];
+    Object.values(localDict).forEach( (value)=> {
+        dictArray.push(value);
+    });
+    dictArray = flatten(dictArray).filter(entry=> {
+        return has(entry, keyword);
+    });
+    try {
+        console.log("Use:", dictArray[0][keyword].use);
+        console.log("Example:", dictArray[0][keyword].example);
+        console.log("Is on the following prototypes: ", dictArray[0][keyword].prototypes);
+        console.log("More information: ", dictArray[0][keyword].mdn)
+    } catch(error) {
+        console.log(`The keyword ${keyword} was not found`);
+    }
 }
 
-console.log(process.argv);
-
-find(process.argv[1]);
+find(process.argv[2], process.argv[3]);

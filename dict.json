@@ -1,0 +1,32 @@
+{
+    "array": [
+        {
+            "filter": {
+                "use": "Iterates each element of an array through a conditional test, creating a new array of elements that pass the test",
+                "example": "myArray = [5,7,10,12];\nmyArray = myArray.filter(x=> x < 10);\nmyArray === [5,7]",
+                "prototypes": "Array",
+                "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
+            },
+            "reduce": {
+                "use": "Reduces the elements of an array to a single value",
+                "example": "myArray = [1,2,3];\nsum = myArray.reduce((x, y)=> x +y);\n sum === 6",
+                "prototypes": "Array",
+                "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce"
+            },
+            "forEach": "iterates over the items"
+        }
+    ],
+    "object": [
+        {
+            "hasOwnProperty": "shows if it has the property of",
+            "freeze": "disables mutation of object"
+        }
+    ],
+    "math": [
+        {
+            "random": "picks a random number",
+            "floor": "floor of a number",
+            "ceil": "ceiling of a number"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "pb-help",
+  "version": "1.0.0",
+  "description": "Type in a JavaScript native keyword and get a small guide on how to use it",
+  "main": "index.js",
+  "bin": {
+    "pb-help": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jckuhl/helper.git"
+  },
+  "author": "Jonathan Kuhl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jckuhl/helper/issues"
+  },
+  "homepage": "https://github.com/jckuhl/helper#readme",
+  "dependencies": {
+    "lodash.flatten": "^4.4.0",
+    "lodash.has": "^4.5.2"
+  }
+}
