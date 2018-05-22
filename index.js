@@ -5,12 +5,18 @@ const flatten = require('lodash.flatten');
 const has = require('lodash.has');
 
 function find(keyword, option) {
-    keyword = keyword.toLowerCase();
+    try {
+        keyword = keyword.toLowerCase();
+    } catch(error) {
+        console.log("Please provide an argument: pb-help <argument>");
+        return 0;
+    }
     let localDict = dict;
     let dictArray = [];
     Object.values(localDict).forEach( (value)=> dictArray.push(value));
     dictArray = flatten(dictArray).filter(entry=> has(entry, keyword));
     try {
+        console.clear();
         console.log(`\n\n*****  ${dictArray[0][keyword].name.trim()}  *****\n\n`);
         console.log("Use:", dictArray[0][keyword].use);
         console.log("Example:", dictArray[0][keyword].example);
